@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigChange & Chequers Contract Services</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Roboto Flex & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,700;8..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+    <style>
+        /* Custom styles based on BigChange Brand Guidelines PDF */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #282922; /* Charcoal */
+            background-color: #F4F4F4; /* Light Grey */
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto Flex', sans-serif;
+            font-weight: 700; /* Bold */
+        }
+
+        .bg-navy { background-color: #0A2240; }
+        .text-navy { color: #0A2240; }
+        
+        .bg-energy-blue { background-color: #0072CE; }
+        .text-energy-blue { color: #0072CE; }
+        
+        .bg-green-accent { background-color: #28E289; }
+        .text-green-accent { color: #28E289; }
+        
+        .bg-orange-accent { background-color: #FF6B00; }
+        .text-orange-accent { color: #FF6B00; }
+
+        .brand-gradient {
+            background: linear-gradient(90deg, #0A2240 0%, #0072CE 100%);
+        }
+
+        .icon {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Interactive Gantt Chart Styles */
+        .gantt-bar {
+            transition: all 0.3s ease-in-out;
+            border-radius: 4px;
+        }
+
+        .gantt-bar:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .gantt-bar.active {
+            box-shadow: 0 0 0 3px #0072CE, 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .gantt-row::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #e5e7eb; /* gray-200 */
+        }
+
+        .gantt-row:last-child::after {
+            display: none;
+        }
+        
+        /* Accordion styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-button .icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-button.open .icon {
+            transform: rotate(180deg);
+        }
+
+        /* Sticky Nav */
+        #sticky-nav {
+            transition: top 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="brand-gradient text-white py-8 md:py-12">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <div class="flex justify-center items-center space-x-4 md:space-x-8 mb-8">
+                <img src="https://i.postimg.cc/ydbgqXFm/Big-Change-White.png" alt="BigChange Logo" class="h-10 md:h-12" onerror="this.onerror=null;this.src='https://placehold.co/200x50/0A2240/FFFFFF?text=BigChange';">
+                <span class="text-4xl font-light">&times;</span>
+                <img src="https://i.postimg.cc/qMLt4TXB/Header-Logo.png" alt="Chequers Logo" class="h-16 md:h-20" onerror="this.onerror=null;this.src='https://placehold.co/200x80/FFFFFF/0A2240?text=Chequers';">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">A Partnership for Unstoppable Growth</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto">A proposal to empower Chequers Contract Services with a unified, powerful, and scalable field service management solution.</p>
+            <img src="https://i.postimg.cc/K8q0HC14/Churchill-Logo-1-300x300.png" alt="Churchill Group Logo" class="h-24 mx-auto mt-8 bg-white p-2 rounded-full" onerror="this.onerror=null;this.src='https://placehold.co/96x96/FFFFFF/000000?text=Churchill';">
+        </div>
+    </header>
+
+    <!-- Sticky Nav -->
+    <nav id="sticky-nav" class="fixed top-[-100px] left-0 right-0 bg-white/90 backdrop-blur-sm shadow-md z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                        <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-8" onerror="this.onerror=null;this.src='https://placehold.co/150x32/000000/FFFFFF?text=BigChange';">
+                        <span class="text-2xl font-light text-gray-300">&times;</span>
+                        <img src="https://i.postimg.cc/qMLt4TXB/Header-Logo.png" alt="Chequers Logo" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/FFFFFF?text=Chequers';">
+                </div>
+                <!-- NAV LINKS UPDATED -->
+                <div class="hidden md:flex items-center justify-end text-xs">
+                    <a href="#simpro-group" class="px-2 py-2 mx-1 rounded-md font-medium text-gray-700 hover:bg-gray-200 transition-colors">About</a>
+                    <a href="#project-team" class="px-2 py-2 mx-1 rounded-md font-medium text-gray-700 hover:bg-gray-200 transition-colors">Team</a>
+                    <a href="#implementation-training" class="px-2 py-2 mx-1 rounded-md font-medium text-gray-700 hover:bg-gray-200 transition-colors">Implementation</a>
+                    <a href="#current-state" class="px-2 py-2 mx-1 rounded-md font-medium text-gray-700 hover:bg-gray-200 transition-colors">Current Position</a>
+                    <a href="#discovery-work" class="px-2 py-2 mx-1 rounded-md font-medium text-gray-700 hover:bg-gray-200 transition-colors">Discovery</a>
+                    <a href="#functional-requirements" class="px-2 py-2 mx-1 rounded-md font-medium text-gray-700 hover:bg-gray-200 transition-colors">RFI Response</a>
+                    <a href="#integration-templa" class="px-2 py-2 mx-1 rounded-md font-medium text-gray-700 hover:bg-gray-200 transition-colors">Templa</a>
+                    <a href="#unrivalled-support" class="px-2 py-2 mx-1 rounded-md font-medium text-gray-700 hover:bg-gray-200 transition-colors">Support & Migration</a>
+                    <a href="#pricing-overview" class="px-2 py-2 mx-1 rounded-md font-medium text-gray-700 hover:bg-gray-200 transition-colors">Pricing</a>
+                    <a href="#case-studies" class="px-2 py-2 mx-1 rounded-md font-medium text-gray-700 hover:bg-gray-200 transition-colors">Case Studies</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-navy focus:outline-none">
+                        <span class="icon">menu</span>
+                    </button>
+                </div>
+            </div>
+             <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="#simpro-group" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">About</a>
+                <a href="#project-team" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Team</a>
+                <a href="#implementation-training" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Implementation</a>
+                <a href="#current-state" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Current Position</a>
+                <a href="#discovery-work" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Discovery To Date</a>
+                <a href="#functional-requirements" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">RFI Response</a>
+                <a href="#integration-templa" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Templa</a>
+                <a href="#unrivalled-support" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Support & Migration</a>
+                <a href="#pricing-overview" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Pricing</a>
+                <a href="#case-studies" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Case Studies</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+
+        <!-- Simpro Group Section -->
+        <section id="simpro-group" class="bg-navy text-white py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-8 text-center">
+                <img src="https://i.postimg.cc/BQrJr7RZ/Simprogroup-removebg-preview.png" alt="Simpro Group Logo" class="h-12 mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/200x48/FFFFFF/0A2240?text=Simpro+Group';">
+                <h2 class="text-4xl font-bold text-white mb-4">Part of a Global Leader in Field Service Management</h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto mb-8">
+                    Simpro Group is the dominant field service management SaaS leader, driven by innovation, customer centricity, and global expansion in key markets. Our portfolio champions the growth mindset that drives trade businesses forward. AroFlo, BigChange, ClockShark and Simpro platforms provide centralized operating systems that enhance efficiency, drive profitability, and fuel growth.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-10">
+                    <div class="bg-white p-6 rounded-lg flex items-center space-x-4">
+                        <span class="icon text-navy text-4xl">business_center</span>
+                        <div>
+                            <p class="text-3xl font-bold text-navy">24,000+</p>
+                            <p class="text-gray-600">Businesses Served</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg flex items-center space-x-4">
+                        <span class="icon text-navy text-4xl">groups</span>
+                        <div>
+                            <p class="text-3xl font-bold text-navy">450,000+</p>
+                            <p class="text-gray-600">Users Worldwide</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg flex items-center space-x-4">
+                        <span class="icon text-navy text-4xl">badge</span>
+                        <div>
+                            <p class="text-3xl font-bold text-navy">700+</p>
+                            <p class="text-gray-600">Employees</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <h3 class="text-2xl font-bold text-white">4 Leading Platforms. One Mission.</h3>
+                    <p class="text-lg text-gray-300">To transform field service operations worldwide.</p>
+                    <div class="flex justify-center items-center mt-6">
+                        <img src="https://i.postimg.cc/1txZV8cG/Across-The-Group-Logos.png" alt="AroFlo, BigChange, Clockshark, and Simpro Logos" class="h-24 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/400x96/FFFFFF/0A2240?text=Group+Logos';">
+                    </div>
+                    <p class="text-sm text-gray-400 mt-8">Backed by</p>
+                    <img src="https://i.postimg.cc/vmNyvP7d/K1.png" alt="K1 Investment Management Logo" class="h-14 mx-auto mt-2" onerror="this.onerror=null;this.src='https://placehold.co/150x56/FFFFFF/0A2240?text=K1';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Software Details Section -->
+        <section id="software-details" class="py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- BigChange Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col">
+                        <div class="h-12 flex items-center mb-4">
+                            <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-10 self-start" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/FFFFFF?text=BigChange';">
+                        </div>
+                        <div class="flex-grow">
+                            <p class="text-gray-600 text-sm">BigChange is proudly UK based tech built for businesses that carry out high volumes of daily jobbing work, offering powerful tools to streamline operations and enhance customer service. Its smart scheduling and bulk route optimisation capabilities ensure the right resource is sent to the right job at the right time—taking into account location, traffic, skills, and availability. With real-time proof of works, time-stamped job updates, and automatic customer alerts, BigChange helps businesses deliver a world-class customer journey.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t">
+                            <h4 class="font-bold text-navy">Core Markets:</h4>
+                            <ul class="text-sm text-gray-700 list-disc list-inside mt-2">
+                                <li>Grounds Maintenance</li>
+                                <li>Waste &amp; Drainage</li>
+                                <li>Soft &amp; Hard Services</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- AroFlo Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col">
+                        <div class="h-12 flex items-center mb-4">
+                            <img src="https://i.postimg.cc/cLyjSMb7/Aroflo.png" alt="AroFlo Logo" class="h-10 self-start" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/FFFFFF?text=AroFlo';">
+                        </div>
+                        <div class="flex-grow">
+                            <p class="text-gray-600 text-sm">AroFlo is a cloud-based job and field service management platform designed specifically for smaller Australian trade and service businesses, with headquarters in Australia. It offers end-to-end capabilities—from quoting, scheduling, and invoicing to asset tracking, compliance forms, and GPS monitoring—enabling tradespeople to manage their entire job lifecycle seamlessly.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t">
+                            <h4 class="font-bold text-navy">Core Markets:</h4>
+                            <ul class="text-sm text-gray-700 list-disc list-inside mt-2">
+                                <li>Asset Industries</li>
+                                <li>Facilities Management</li>
+                                <li>Project Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ClockShark Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col">
+                        <div class="h-12 flex items-center mb-4">
+                            <img src="https://i.postimg.cc/BvJV8ZsX/Clockshark.png" alt="Clockshark Logo" class="h-4 self-start" onerror="this.onerror=null;this.src='https://placehold.co/150x16/000000/FFFFFF?text=ClockShark';">
+                        </div>
+                        <div class="flex-grow">
+                            <p class="text-gray-600 text-sm">ClockShark is a cloud-based timesheet software designed for small field service businesses, particularly in Australia and the U.S. It enables mobile teams to easily clock in and out using GPS-enabled mobile app, ensuring accurate time tracking with geofencing and location-based verification. With features like crew clock-in, real-time visibility of who’s working, and seamless accountancy integrations. It simplifies timesheet collection, reduces admin overhead.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t">
+                            <h4 class="font-bold text-navy">Core Markets:</h4>
+                            <ul class="text-sm text-gray-700 list-disc list-inside mt-2">
+                                <li>Construction</li>
+                                <li>Cleaning Services</li>
+                                <li>Staffing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Simpro Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col">
+                        <div class="h-12 flex items-center mb-4">
+                            <img src="https://i.postimg.cc/wjXrTyCC/simpro-org-logo-removebg-preview.png" alt="Simpro Logo" class="h-10 self-start" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/FFFFFF?text=Simpro';">
+                        </div>
+                        <div class="flex-grow">
+                            <p class="text-gray-600 text-sm">Simpro is an Australian based field service management platform designed primarily for project-based businesses, particularly in industries like HVAC, electrical, and plumbing. It excels at managing long-term projects, complex quoting, and asset management—tracking equipment such as boilers and air conditioning units throughout their lifecycle. Its scheduling capabilities are relatively basic and better suited to planned works than reactive or high-frequency jobbing environments. Simpro isn't built for businesses that rely on fast-paced, high-volume jobbing.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t">
+                            <h4 class="font-bold text-navy">Core Markets:</h4>
+                            <ul class="text-sm text-gray-700 list-disc list-inside mt-2">
+                                <li>Construction</li>
+                                <li>HVAC &amp; Heavy Asset Industries</li>
+                                <li>Project Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BigChange Story Timeline -->
+        <section id="bigchange-story" class="py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-4xl font-bold text-center text-navy mb-4">BigChange's Story &amp; Timeline</h2>
+                <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-16">From Startup to Industry Leader - A Journey of Innovation &amp; Growth</p>
+                
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="hidden md:block absolute top-2.5 left-0 w-full h-0.5 bg-gray-300"></div>
+                    
+                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-x-12 gap-y-12">
+                        <!-- Timeline Item 1: 2013 -->
+                        <div class="relative">
+                            <div class="md:text-center">
+                                <div class="absolute top-0 left-0 md:relative md:left-auto md:mx-auto w-5 h-5 rounded-full bg-energy-blue border-4 border-gray-100 ring-2 ring-gray-300"></div>
+                                <h3 class="text-xl font-bold text-navy mt-8 md:mt-4">Founded by Martin Port</h3>
+                                <p class="font-semibold text-energy-blue mt-1">2013</p>
+                                <p class="mt-4 text-gray-600 text-sm">Martin Port, a serial entrepreneur from Leeds, founded BigChange with the goal of revolutionising the field service management industry, bringing together job management, CRM and vehicle tracking in one native platform.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2: 2013-2020 -->
+                        <div class="relative">
+                            <div class="md:text-center">
+                                <div class="absolute top-0 left-0 md:relative md:left-auto md:mx-auto w-5 h-5 rounded-full bg-energy-blue border-4 border-gray-100 ring-2 ring-gray-300"></div>
+                                <h3 class="text-xl font-bold text-navy mt-8 md:mt-4">Rapid Growth</h3>
+                                <p class="font-semibold text-energy-blue mt-1">2013-2020</p>
+                                <p class="mt-4 text-gray-600 text-sm">BigChange experienced explosive growth - scaling from launch to over $30 million in annual recurring revenue by 2020, and acquiring around 2000 customers by that point.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3: 2021 -->
+                        <div class="relative">
+                            <div class="md:text-center">
+                                <div class="absolute top-0 left-0 md:relative md:left-auto md:mx-auto w-5 h-5 rounded-full bg-energy-blue border-4 border-gray-100 ring-2 ring-gray-300"></div>
+                                <h3 class="text-xl font-bold text-navy mt-8 md:mt-4">GHP Investment</h3>
+                                <p class="font-semibold text-energy-blue mt-1">2021</p>
+                                <p class="mt-4 text-gray-600 text-sm">In February 2021, BigChange received a £75 million growth investment from Boston-based private equity firm Great Hill Partners, valuing the business at around £100 million. At the time, BigChange had a team of 150 employees driving its rapid growth and innovation.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4: 2024 -->
+                        <div class="relative">
+                            <div class="md:text-center">
+                                <div class="absolute top-0 left-0 md:relative md:left-auto md:mx-auto w-5 h-5 rounded-full bg-energy-blue border-4 border-gray-100 ring-2 ring-gray-300"></div>
+                                <h3 class="text-xl font-bold text-navy mt-8 md:mt-4">K1 Partners Investment</h3>
+                                <p class="font-semibold text-energy-blue mt-1">2024</p>
+                                <p class="mt-4 text-gray-600 text-sm">In November 2024, BigChange was acquired by Australian field service management provider Simpro Group, backed by K1 Investment Management—marking a major milestone in its growth journey. As part of the acquisition, BigChange joined a powerful portfolio of field service software solutions, including AroFlo, ClockShark, and Simpro Software.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Logos Section -->
+        <section id="customer-logos" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-3xl font-bold text-center text-navy mb-12">Trusted by Leading Grounds &amp; Cleaning Businesses Nationally</h2>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 md:gap-x-16 gap-y-10">
+                    <img src="https://i.postimg.cc/Y9NnthhX/Countrywide1.png" alt="Countrywide Logo" class="h-9" onerror="this.onerror=null;this.src='https://placehold.co/150x36/CCCCCC/FFFFFF?text=Countrywide';">
+                    <img src="https://i.postimg.cc/ZYc7gvkn/Envirocare-GM1.png" alt="Envirocare GM Logo" class="h-14" onerror="this.onerror=null;this.src='https://placehold.co/150x56/CCCCCC/FFFFFF?text=Envirocare';">
+                    <img src="https://i.postimg.cc/ZnTfn4NJ/Greenskape1.png" alt="Greenskape Logo" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/CCCCCC/FFFFFF?text=Greenskape';">
+                    <img src="https://i.postimg.cc/7L2tQBDr/NSS1.png" alt="NSS Logo" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/CCCCCC/FFFFFF?text=NSS';">
+                    <img src="https://i.postimg.cc/MpXF16FT/Pinnacle1.png" alt="Pinnacle Logo" class="h-14" onerror="this.onerror=null;this.src='https://placehold.co/150x56/CCCCCC/FFFFFF?text=Pinnacle';">
+                    <img src="https://i.postimg.cc/Y9BDc1qG/Price-Group1.png" alt="The Price Group Logo" class="h-14" onerror="this.onerror=null;this.src='https://placehold.co/150x56/CCCCCC/FFFFFF?text=Price+Group';">
+                    <img src="https://i.postimg.cc/DwDYg99c/SBFM1.jpg" alt="SBFM Logo" class="h-14" onerror="this.onerror=null;this.src='https://placehold.co/150x56/CCCCCC/FFFFFF?text=SBFM';">
+                    <img src="https://i.postimg.cc/7hmKTd10/Thirteen1.png" alt="Thirteen Logo" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/CCCCCC/FFFFFF?text=Thirteen';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Project Team Section -->
+        <section id="project-team" class="py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-4xl font-bold text-center text-navy mb-12">The Core Project Team</h2>
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                        <!-- Team Member Card -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                            <img src="https://i.postimg.cc/85sxRxmR/Serge1.jpg" alt="Serge Fagelman" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128/CCCCCC/FFFFFF?text=SF';">
+                            <h3 class="text-xl font-bold text-navy">Serge Fagelman</h3>
+                            <p class="text-energy-blue font-semibold">Corporate Sales Director &amp; Sales Team Development</p>
+                            <p class="text-sm text-gray-600 mt-2">With BigChange for 11 years, he was part of the original micro-shareholding team that helped establish BigChange® as a global force in the job management software industry. Worked across all departments in BigChange.</p>
+                        </div>
+                        <!-- Team Member Card -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                            <img src="https://i.postimg.cc/s2jkXMB0/Alex-Shep1.jpg" alt="Alex Shepherd" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128/CCCCCC/FFFFFF?text=AS';">
+                            <h3 class="text-xl font-bold text-navy">Alex Shepherd</h3>
+                            <p class="text-energy-blue font-semibold">UK Sales Director</p>
+                            <p class="text-sm text-gray-600 mt-2">Alex leads the BigChange Sales Team. He brings with him nearly a decade of experience from Adobe Commerce (formerly Magento), where he helped B2B and B2C businesses drive digital growth.</p>
+                        </div>
+                        <!-- Team Member Card -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                            <img src="https://i.postimg.cc/hjw6pM2H/Lee1.jpg" alt="Lee Wilkinson" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128/CCCCCC/FFFFFF?text=LW';">
+                            <h3 class="text-xl font-bold text-navy">Lee Wilkinson</h3>
+                            <p class="text-energy-blue font-semibold">Senior Sales Engineer</p>
+                            <p class="text-sm text-gray-600 mt-2">With over 25 years of experience in FM businesses, Lee specialises in translating customer needs into bespoke technical solutions through detailed scoping of operational requirements. He works closely with sales teams to assess client processes and design tailored implementations.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:w-2/3 lg:mx-auto">
+                        <!-- Team Member Card -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                            <img src="https://i.postimg.cc/tgBLV9WR/Chris1.jpg" alt="Chris Wardley" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128/CCCCCC/FFFFFF?text=CW';">
+                            <h3 class="text-xl font-bold text-navy">Chris Wardley</h3>
+                            <p class="text-energy-blue font-semibold">Senior Onboarding Manager</p>
+                            <p class="text-sm text-gray-600 mt-2">Chris has been instrumental in onboarding a broad spectrum of BigChange clients—from small businesses to enterprise-level organizations. With deep system knowledge, Chris's experience stretches across multiple project scales. He's skilled in translating complex operational needs into practical, scalable system configurations that meet users' immediate and future needs.</p>
+                        </div>
+                             <!-- Team Member Card -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                            <img src="https://i.postimg.cc/YCzcM6SW/Harry1.png" alt="Harry Dews" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128/CCCCCC/FFFFFF?text=HD';">
+                            <h3 class="text-xl font-bold text-navy">Harry Dews</h3>
+                            <p class="text-energy-blue font-semibold">Group Customer Success Manager</p>
+                            <p class="text-sm text-gray-600 mt-2">Harry serves as the dedicated Customer Success Manager for the Churchill Group, acting as BigChange's primary liaison with Churchill. In this capacity, he drives further software adoption within Churchill's teams, identifying opportunities to deepen use and unlock new value.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation and Training Approach Section -->
+        <section id="implementation-training" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-4xl font-bold text-center text-navy mb-12">Implementation and Training Approach</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/FFFFFF?text=BigChange';">
+                            <span class="text-2xl font-light">&times;</span>
+                            <img src="https://i.postimg.cc/qMLt4TXB/Header-Logo.png" alt="Chequers Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=Chequers';">
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy">A Tailored Partnership for Success</h3>
+                        <p class="text-gray-700">While we have standardised best practices, we recognise that this is a significant project. We will tailor a bespoke onboarding plan to meet the specific needs of the Chequers team, ensuring a seamless transition.</p>
+                        <p class="text-gray-700">It is vital that we work together to develop a mutually agreed implementation and training approach that accounts for the unique nuances of your operation.</p>
+                        
+                        <div class="mt-6">
+                            <h4 class="text-xl font-bold text-navy mb-3">Training &amp; Rollout Strategy</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start"><span class="icon text-energy-blue mr-2">groups</span><div><span class="font-bold">Office Users:</span> Live workshops (online or onsite) covering CRM, job booking, scheduling, and reporting.</div></li>
+                                <li class="flex items-start"><span class="icon text-energy-blue mr-2">engineering</span><div><span class="font-bold">Road Users:</span> Onsite toolbox talks focusing on practical skills like tablet usage, job completion, and capturing photos.</div></li>
+                                <li class="flex items-start"><span class="icon text-energy-blue mr-2">star</span><div><span class="font-bold">Super Users:</span> Deep-dive workshops to empower them as team champions and first-line support.</div></li>
+                            </ul>
+                            <p class="text-sm text-gray-700 mt-4">Our standard approach to implementation and training can be seen within our Onboarding Welcome Page.</p>
+                            <a href="https://bigchangeonboarding.github.io/onboardingwelcompack/" target="_blank" class="mt-4 inline-block bg-energy-blue text-white font-bold py-2 px-4 rounded-lg hover:bg-navy transition duration-300">View Welcome Pack</a>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://i.postimg.cc/5yL2qsBt/Training.png" alt="Training Session" class="rounded-lg shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Training';">
+                    </div>
+                </div>
+
+                <div class="mt-16 pt-12 border-t border-gray-200">
+                    <h3 class="text-3xl font-bold text-navy text-center mb-4">Accelerated Project Timeline</h3>
+                    <div class="space-y-4 text-center max-w-4xl mx-auto mb-8">
+                        <p class="text-gray-700">A successful rollout depends on a strong partnership. While timelines are shorter than initially explored, a phased pilot approach is ideal. We will work closely to align on key stakeholders, timings, and dependencies to ensure milestones are achieved, leveraging our experience integrating Templa with other Churchill business units.</p>
+                        <p class="text-center text-sm text-gray-500 italic">Click on each phase below to see more details.</p>
+                    </div>
+                    
+                    <!-- Interactive Gantt Chart -->
+                    <div id="gantt-chart-container" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2">
+                            <div class="grid grid-cols-12">
+                                <!-- Y-Axis Labels -->
+                                <div class="col-span-3 space-y-2 pr-4 text-right text-sm font-semibold">
+                                    <div class="h-12 flex items-center justify-end text-navy">Discovery &amp; Planning</div>
+                                    <div class="h-12 flex items-center justify-end text-navy">Pilot Training &amp; Soft Go-Live</div>
+                                    <div class="h-12 flex items-center justify-end text-navy">System Refinement &amp; Rollout</div>
+                                    <div class="h-12 flex items-center justify-end text-navy">Full Go-Live</div>
+                                    <div class="h-12 flex items-center justify-end text-navy">Post Go-Live Support</div>
+                                </div>
+                                <!-- Gantt Area -->
+                                <div class="col-span-9">
+                                    <div class="grid grid-cols-6 gap-2 text-center text-xs font-bold text-navy mb-2">
+                                        <div>Sep '25</div>
+                                        <div>Oct '25</div>
+                                        <div>Nov '25</div>
+                                        <div>Dec '25</div>
+                                        <div>Jan '26</div>
+                                        <div>Feb '26</div>
+                                    </div>
+                                    <div class="relative space-y-2 text-white font-bold text-xs">
+                                        <!-- Grid Lines -->
+                                        <div class="absolute inset-0 grid grid-cols-6 gap-2 border-l border-gray-200">
+                                            <div class="border-r border-gray-200"></div>
+                                            <div class="border-r border-gray-200"></div>
+                                            <div class="border-r border-gray-200"></div>
+                                            <div class="border-r border-gray-200"></div>
+                                            <div class="border-r border-gray-200"></div>
+                                        </div>
+                                        <!-- Discovery -->
+                                        <div class="h-12 relative gantt-row">
+                                            <div class="gantt-bar active cursor-pointer absolute top-2 left-0 w-1/6 h-8 bg-energy-blue flex items-center px-2" 
+                                                 data-title="Discovery, Planning &amp; System Configuration" 
+                                                 data-timeline="September 2025" 
+                                                 data-description="An intensive initial phase combining requirements gathering, workflow mapping, and the core system build.">
+                                                <span class="icon text-xs mr-1">manage_search</span><span class="hidden sm:inline">Discovery</span>
+                                            </div>
+                                        </div>
+                                        <!-- Pilot -->
+                                        <div class="h-12 relative gantt-row">
+                                            <div class="gantt-bar cursor-pointer absolute top-2 h-8 bg-orange-accent flex items-center px-2" style="left: 16.66%; width: 16.66%"
+                                                 data-title="Pilot Training, Testing &amp; Soft Go-Live" 
+                                                 data-timeline="October 2025" 
+                                                 data-description="Super users will be trained and will immediately begin using the system on selected live pilot contracts. This soft launch requires active monitoring and support.">
+                                                <span class="icon text-xs mr-1">science</span><span class="hidden sm:inline">Pilot</span>
+                                            </div>
+                                        </div>
+                                        <!-- Rollout -->
+                                        <div class="h-12 relative gantt-row">
+                                            <div class="gantt-bar cursor-pointer absolute top-2 h-8 bg-blue-400 flex items-center px-2" style="left: 33.33%; width: 25%"
+                                                 data-title="System Refinement, Scale-Up &amp; Full Training Rollout" 
+                                                 data-timeline="November - Mid-December 2025" 
+                                                 data-description="Feedback from the pilot phase will be used for rapid system adjustments while a full-scale training program is executed for all remaining users.">
+                                                <span class="icon text-xs mr-1">model_training</span><span class="hidden sm:inline">Rollout</span>
+                                            </div>
+                                        </div>
+                                        <!-- Go-Live -->
+                                        <div class="h-12 relative gantt-row">
+                                            <div class="gantt-bar cursor-pointer absolute top-2 h-8 bg-green-accent text-navy flex items-center px-2" style="left: 58.33%; width: 25%"
+                                                 data-title="Full Go-Live" 
+                                                 data-timeline="End of December 2025 - End of January 2026" 
+                                                 data-description="BigChange becomes the primary job management system for all Chequers contracts.">
+                                                <span class="icon text-xs mr-1">flag</span><span class="hidden sm:inline">Go-Live</span>
+                                            </div>
+                                        </div>
+                                        <!-- Support -->
+                                        <div class="h-12 relative gantt-row">
+                                            <div class="gantt-bar cursor-pointer absolute top-2 h-8 bg-navy flex items-center px-2" style="left: 66.66%; width: 33.33%"
+                                                 data-title="Post Go-Live Support" 
+                                                 data-timeline="January - February 2026" 
+                                                 data-description="A period of hypercare support to ensure a smooth transition, establish reporting, and focus on continuous improvement.">
+                                                <span class="icon text-xs mr-1">support_agent</span><span class="hidden sm:inline">Support</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="gantt-details" class="bg-gray-50 p-6 rounded-lg shadow-inner">
+                            <h4 id="gantt-title" class="text-xl font-bold text-navy"></h4>
+                            <p id="gantt-timeline" class="font-semibold text-energy-blue my-2"></p>
+                            <p id="gantt-description" class="text-sm text-gray-700"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Post Go-Live Support -->
+        <section id="post-live-support" class="py-12 md:py-16">
+             <div class="container mx-auto px-4 md:px-8">
+                <h3 class="text-3xl font-bold text-navy text-center mb-8">Post Go-Live Partnership &amp; Support</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://i.postimg.cc/8Cf3D8KX/Road-Crew-Customer-Support.png" alt="Customer Support" class="rounded-lg shadow-md w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Support';">
+                    </div>
+                    <div>
+                        <p class="text-gray-700 mb-4">Our partnership extends far beyond the go-live date. Chequers will benefit from:</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start"><span class="icon text-energy-blue mr-3">groups</span><p>A dedicated post-go-live support team from BigChange.</p></div>
+                            <div class="flex items-start"><span class="icon text-energy-blue mr-3">support_agent</span><p><span class="font-bold text-navy">Access to 24/7 UK-based customer support.</span></p></div>
+                            <div class="flex items-start"><span class="icon text-energy-blue mr-3">event_repeat</span><p>Quarterly system review workshops to drive continuous improvement.</p></div>
+                            <div class="flex items-start"><span class="icon text-energy-blue mr-3">monitoring</span><p>Opportunities to integrate BI dashboards and advanced reporting.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Measuring Success -->
+        <section id="measuring-success" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex justify-center items-center space-x-4 md:space-x-8 mb-8">
+                    <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/FFFFFF?text=BigChange';">
+                    <span class="text-4xl font-light">&times;</span>
+                    <img src="https://i.postimg.cc/qMLt4TXB/Header-Logo.png" alt="Chequers Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=Chequers';">
+                </div>
+                <h2 class="text-4xl font-bold text-center text-navy mb-12">Measuring Our Success</h2>
+                <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">We will track Key Performance Indicators (KPIs) to measure the impact and success of the project across all areas of your operation.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <span class="icon text-energy-blue text-4xl">work</span>
+                        <h3 class="font-bold text-navy mt-4 mb-2">Job Management</h3>
+                        <p class="text-sm text-gray-600">% of jobs completed on BigChange, first-time completion rate.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <span class="icon text-energy-blue text-4xl">speed</span>
+                        <h3 class="font-bold text-navy mt-4 mb-2">Admin Efficiency</h3>
+                        <p class="text-sm text-gray-600">Reduction in manual entry/time to schedule.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <span class="icon text-energy-blue text-4xl">verified</span>
+                        <h3 class="font-bold text-navy mt-4 mb-2">Compliance</h3>
+                        <p class="text-sm text-gray-600">Form usage rate, missed delivery reporting.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <span class="icon text-energy-blue text-4xl">support_agent</span>
+                        <h3 class="font-bold text-navy mt-4 mb-2">Customer Service</h3>
+                        <p class="text-sm text-gray-600">Response times, audit trail availability.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <span class="icon text-energy-blue text-4xl">engineering</span>
+                        <h3 class="font-bold text-navy mt-4 mb-2">Field Engagement</h3>
+                        <p class="text-sm text-gray-600">Job acceptance/completion rates, app feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- One Single Platform Section -->
+        <section id="one-platform" class="bg-navy text-white py-16 md:py-20">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-4xl font-bold mb-4">One Single Platform</h2>
+                        <p class="text-lg text-gray-300 max-w-xl mx-auto md:mx-0">BigChange eliminates complexity by connecting your back office, mobile workforce, and customers in one easy-to-use system. Experience seamless real-time data flow, enhance communication, and gain complete visibility over your entire operation, from the first client call to the final invoice.</p>
+                    </div>
+                    <div>
+                        <img src="https://i.postimg.cc/Qxnps9Tm/One-SPlatform.png" alt="One Single Platform Diagram" class="max-w-lg w-full mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/512x512/FFFFFF/0A2240?text=Platform+Diagram';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Sections: State of Play, Challenges, Goals, ROI -->
+        <section id="current-state" class="py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex justify-center items-center gap-4 mb-12">
+                         <h2 class="text-4xl font-bold text-center text-navy">Current State of Play</h2>
+                         <img src="https://i.postimg.cc/qMLt4TXB/Header-Logo.png" alt="Chequers Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=Chequers';">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-energy-blue text-3xl mt-1">apartment</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Industry</h4>
+                            <p class="text-gray-600 text-sm">Chequers operate primarily in the social housing sector, delivering cleaning, grounds maintenance &amp; waste removal, through both a mixture of mobile &amp; static operatives.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-energy-blue text-3xl mt-1">groups</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Business Count</h4>
+                            <p class="text-gray-600 text-sm">Chequers Contract Services employs around 600 staff, with approximately 500 operatives and 100 back-office personnel supporting operations.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-energy-blue text-3xl mt-1">dns</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Systems</h4>
+                            <p class="text-gray-600 text-sm">Cleanflow (Legacy) was developed internally by Andy Foard (Internal Applications Specialist) alongside TemplaCMS for financial management, and the business is now progressing towards a rollout of Microsoft Dynamics.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-energy-blue text-3xl mt-1">map</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Operating Areas</h4>
+                            <p class="text-gray-600 text-sm">Chequers Contract Services operates across London and the South East-including North Thames, North West, and South West regions-delivering comprehensive facilities and grounds maintenance support to social housing, educational, commercial, and local authority clients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex justify-center items-center gap-4 mb-12">
+                    <h2 class="text-4xl font-bold text-center text-navy">Pain & Challenges</h2>
+                    <img src="https://i.postimg.cc/qMLt4TXB/Header-Logo.png" alt="Chequers Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=Chequers';">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-orange-accent text-3xl mt-1">power_off</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Systems</h4>
+                            <p class="text-gray-600 text-sm">Chequers are experiencing significant issues with their legacy, on-premise Cleanflow system, which is outdated, unstable, and frequently falls over, causing operational disruption and limiting their ability to scale effectively.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-orange-accent text-3xl mt-1">event_busy</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Scheduling</h4>
+                            <p class="text-gray-600 text-sm">Functionally, Cleanflow lacks the advanced scheduling capabilities Chequers need to manage their 'rounds'-it struggles to handle large volumes of jobs efficiently and doesn't support smart scheduling features like route optimisation based on operatives' home addresses, job postcodes, availability, or skillsets, making workforce planning slow and inefficient.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-orange-accent text-3xl mt-1">summarize</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Reporting</h4>
+                            <p class="text-gray-600 text-sm">Cleanflow also presents major challenges with reporting, requiring significant manual effort to extract and compile data-costing time, increasing the risk of errors, and limiting real-time visibility across the business.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-orange-accent text-3xl mt-1">lan</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Disparate Systems</h4>
+                            <p class="text-gray-600 text-sm">Chequers are currently reliant on a range of disparate systems-including Cleanflow, Excel, Fastfield Forms, and the Fastfield Portal-to manage operations and provide access to documentation, resulting in fragmented workflows, duplicated effort, and limited system cohesion.</p>
+                        </div>
+                    </div>
+                       <div class="flex items-start space-x-4 md:col-span-2">
+                        <span class="icon text-orange-accent text-3xl mt-1">mobile_off</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Limited Mobile Functionality</h4>
+                            <p class="text-gray-600 text-sm">Reduced responsiveness and productivity on-site.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aims" class="py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                   <div class="flex justify-center items-center space-x-4 md:space-x-8 mb-8">
+                    <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/FFFFFF?text=BigChange';">
+                    <span class="text-4xl font-light">&times;</span>
+                    <img src="https://i.postimg.cc/qMLt4TXB/Header-Logo.png" alt="Chequers Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=Chequers';">
+                </div>
+                <h2 class="text-4xl font-bold text-center text-navy mb-12">Aims &amp; Business Goals</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-green-accent text-3xl mt-1">schedule</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Streamline 'Rounds' Scheduling</h4>
+                            <p class="text-gray-600 text-sm">Implement smart scheduling and route optimisation to efficiently manage high volumes/mass of daily rounds, factoring in operative location, availability, and skillsets.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-green-accent text-3xl mt-1">cloud_done</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Improve System Stability</h4>
+                            <p class="text-gray-600 text-sm">Replace their unreliable, on-premise software with a modern, cloud-based platform that offers greater uptime, scalability, and performance.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-green-accent text-3xl mt-1">monitoring</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Enhance Reporting &amp; Insight</h4>
+                            <p class="text-gray-600 text-sm">Eliminate manual reporting processes with real-time dashboards, automated reports, and better data visibility to support faster, informed decision-making.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-green-accent text-3xl mt-1">hub</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Unify Disparate Systems</h4>
+                            <p class="text-gray-600 text-sm">Consolidate multiple platforms (Cleanflow, Excel, Fastfield Forms/Portal) into a single, end-to-end solution that improves cohesion and reduces duplicated effort.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 md:col-span-2">
+                        <span class="icon text-green-accent text-3xl mt-1">sentiment_satisfied</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Deliver a Better Customer Experience</h4>
+                            <p class="text-gray-600 text-sm">Provide clients with real-time alerts, job updates, and proof of works (within their portal) to increase transparency, service quality, and customer satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roi" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                   <div class="flex justify-center items-center space-x-4 md:space-x-8 mb-8">
+                    <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/FFFFFF?text=BigChange';">
+                    <span class="text-4xl font-light">&times;</span>
+                    <img src="https://i.postimg.cc/qMLt4TXB/Header-Logo.png" alt="Chequers Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=Chequers';">
+                </div>
+                <h2 class="text-4xl font-bold text-center text-navy mb-12">ROI &amp; Driving Value</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-energy-blue text-3xl mt-1">trending_down</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Reduction in Social Housing Credits</h4>
+                            <p class="text-gray-600 text-sm">Real-time job tracking, proof of works, and SLA monitoring help minimise missed or delayed appointments-significantly reducing costly tenant compensation claims and housing credits.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-energy-blue text-3xl mt-1">speed</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Operational Efficiency Gains</h4>
+                            <p class="text-gray-600 text-sm">Smart scheduling, route optimisation, and mobile job management reduce travel time, downtime, and admin-enabling operatives to complete more jobs per day.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-energy-blue text-3xl mt-1">savings</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Lower IT &amp; Support Overheads</h4>
+                            <p class="text-gray-600 text-sm">Transitioning to BigChange's cloud-based platform removes the need for expensive server maintenance, manual updates, and internal IT support for legacy systems.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="icon text-energy-blue text-3xl mt-1">auto_graph</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Faster, Automated Reporting</h4>
+                            <p class="text-gray-600 text-sm">Eliminates manual data collation by providing real time access to performance metrics, audit trails, and compliance documentation-freeing up valuable back-office resource and offering clear profitability insights.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 md:col-span-2">
+                        <span class="icon text-energy-blue text-3xl mt-1">thumb_up</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy mb-1">Improved First-Time Completion Rates &amp; Customer Satisfaction</h4>
+                            <p class="text-gray-600 text-sm">With better job information, live updates, and integrated communications, operatives &amp; customers are fully informed-driving up first-time completion rates and boosting customer experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BigChange Discovery &amp; Work To Date Section -->
+        <section id="discovery-work" class="py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex justify-center items-center gap-4 mb-12">
+                    <h2 class="text-4xl font-bold text-center text-navy">BigChange Discovery &amp; Work To Date</h2>
+                    <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=BigChange';">
+                </div>
+                <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">We haven't just met you; we've partnered with you. Our journey together has been focused on understanding the finest details of your operation to ensure BigChange is not just a replacement, but a transformation.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-6xl mx-auto">
+                    <!-- Column 1 -->
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <span class="icon text-energy-blue text-3xl mt-1">manage_search</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-navy mb-1">Deep-Dive Analysis of Cleanflow</h4>
+                                <p class="text-gray-600 text-sm">Worked closely with Andy Foard &amp; James George to fully understand the inner workings of the legacy Cleanflow system, including data structure, workflows, and its limitations—ensuring a seamless transition to BigChange.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="icon text-energy-blue text-3xl mt-1">settings_suggest</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-navy mb-1">Custom Recurrence Logic &amp; Automations</h4>
+                                <p class="text-gray-600 text-sm">Scoped and configured complex job recurrence seasonal patterns and bespoke automation rules to mirror Cleanflow’s logic—such as automated actions when visits are missed.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="icon text-energy-blue text-3xl mt-1">route</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-navy mb-1">Mass Job Routing &amp; Scheduling Proof of Concepts</h4>
+                                <p class="text-gray-600 text-sm">Delivered and iterated proof of concepts for high-volume job scheduling using BigChange’s smart scheduling engine, factoring in postcode clustering, operative locations, and SLA commitments.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="icon text-energy-blue text-3xl mt-1">summarize</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-navy mb-1">Development of Job Sheets &amp; Missed Visit Reporting</h4>
+                                <p class="text-gray-600 text-sm">Built customised job sheets based off current Fastfield template and detailed missed visit reports to align with Chequers' contractual obligations and internal reporting standards.</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start space-x-4">
+                            <span class="icon text-energy-blue text-3xl mt-1">dashboard</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-navy mb-1">Contract-Specific Dashboards &amp; KPIs</h4>
+                                <p class="text-gray-600 text-sm">Discussed tailored dashboards and visual reporting tools for different departments, enabling clear visibility of contract performance, SLA compliance, and job progress across the organisation, utilising BigChange’s DAAS offering.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="space-y-8">
+                         <div class="flex items-start space-x-4">
+                            <span class="icon text-energy-blue text-3xl mt-1">account_tree</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-navy mb-1">End-to-End Process Mapping</h4>
+                                <p class="text-gray-600 text-sm">Spent significant time with the Chequers team scoping out operational workflows from job creation through to completion, example reporting, and preparing Templa integration—ensuring all business processes were fully mapped within BigChange.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="icon text-energy-blue text-3xl mt-1">workspaces</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-navy mb-1">Live Environment Planning</h4>
+                                <p class="text-gray-600 text-sm">Defined how the system would be used on the coal face, day-to-day across different departments, operatives, and contracts—ensuring alignment between system functionality and operational expectations in a live setting.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="icon text-energy-blue text-3xl mt-1">science</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-navy mb-1">Sandbox Environment for Proof of Concept</h4>
+                                <p class="text-gray-600 text-sm">Provided Andy Foard with access to a dedicated sandbox environment to model and test actual job rounds, successfully demonstrating BigChange’s ability to handle volume and complexity.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="icon text-energy-blue text-3xl mt-1">transfer_within_a_station</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-navy mb-1">Introduction to Onboarding Manager</h4>
+                                <p class="text-sm text-gray-600 text-sm">Seamlessly transitioned the project from sales to delivery by introducing Chequers to their dedicated BigChange Onboarding Manager, Chris Wardley to ensure continuity and a focused delivery approach.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="icon text-energy-blue text-3xl mt-1">checklist</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-navy mb-1">Robust Project Plan &amp; Staged Rollout</h4>
+                                <p class="text-gray-600 text-sm">Built a structured onboarding plan including a detailed scope of work, phased rollout strategy, and key milestones—preparing the business for a full-scale go-live in January 2026.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Functional Requirements &amp; RFI Response Section -->
+        <section id="functional-requirements" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-4xl font-bold text-center text-navy mb-12">Functional Requirements &amp; RFI Response</h2>
+                <div class="max-w-4xl mx-auto space-y-4">
+                    
+                    <!-- Accordion: Account Managers -->
+                    <div class="border rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                            <h3 class="text-xl font-bold text-navy">Account Managers</h3>
+                            <span class="icon text-navy">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 space-y-4">
+                                <div><p class="font-semibold text-gray-700">Clear and easy-to-navigate schedule view</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, BigChange provides a 'Diary &amp; Job Management' module with a clear, real-time view of all scheduled work, which can be filtered by day, week, month and operative..</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Search function for jobs, visits, clients</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the system allow the user to search across entities via a single search, or a more detailed filter/search within each entity.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Dedicated calendar for internal inspections conducted on sites</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the system allows for filtering on a specific type of work, once the filter has been applied the view can be saved as a favourate view either for every user or an individual user.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Quick resolution and rebooking for missed visits</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the system allows you to configure the auto creation of a follow-on visit for visits for visit where a team attended site but could not complete the work, Any visit that was missed can be quickly redeployed to a team quickly via a number of scheduling methods including drag and drop. Any visit that is passed and unrecoverable can be automattically closed and recorded for the required daily report.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Mobile-friendly interface for on-site use</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, a core feature of BigChange is the lightweight and user-friendly mobile application for field operatives and managers. The app is available on both iOS and Android devices.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Invoice creation</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the platform has a full 'Invoicing &amp; Finance' module. The platform also allows for quotes, which can be converted to invoices, streamlining the process for ad-hoc work as requested in the demo use case.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Client login portal</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the BigChange 'Customer Portal' is a key feature that provides clients with real-time job updates, access to reports and documentation.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Geolocated sites for job start and finish documentation</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, 'Live Tracking' is a core feature. The mobile app uses device GPS to provide time-stamped and geolocated proof of job start, completion, and key events, both on the job and within the operatives timesheet too.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Customisable fields to log accurate missed visits or no access data</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, BigChange allows for custom fields to be built across the platform in many areas. This allows us to then use those fields to report on.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Route optimisation</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the platform features 'smart scheduling and bulk route optimisation'. It plans the most efficient routes based on operative location, job postcode, traffic, and SLAs. The bulk scheduling feature allows for up to 1000 jobs at a time to be scheduled to 300 resources</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Integration with third party timesheet system</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> BigChange includes a native 'Timesheets &amp; Expenses' module, which can be completed via the mobile app. This aligns with Chequers' goal to consolidate systems. If required, integration with another system is possible via the API.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Customisable forms for various scenarios that may happen on site</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the platform allows for the creation of unlimited custom 'Operative Job Sheets &amp; Workflows' to handle any on-site scenario, from risk assessments to quality checks to end of job completion sheets.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Sign off hierarchy for purchase orders</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, BigChange allows for web users to be set a 'pre-approved' amount they can raise PO's up to. If the amount goes above this figure, you can set the system to require a managers approval or not allow the web user to create a PO.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Vehicle tracking</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, 'Live Tracking' is a core feature, supporting both permanently installed vehicle trackers (if required) and mobile device GPS for a complete view of the fleet.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Inventory tracking</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the 'Equipment Management' module allows for the tracking of stock and equipment, both in vehicles and at depots. Mowers, Strimmers etc. You can also set PAT Test and Callibration Due Dates on these for reminders.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Dynamic Quote creator</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, BigChange features an 'Estimating &amp; Quoting' module that allows office staff to create detailed, dynamic quote. See attached as an example.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Full reporting suite to monitor operatives, Sites and Clients with automatic alerts</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the platform has a comprehensive 'Reporting &amp; Performance' module with real-time dashboards. This is enhanced by automated 'Alerting' and a 'Data as a Service' offering for advanced, custom-built BI dashboards.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion: Finance Team -->
+                    <div class="border rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                            <h3 class="text-xl font-bold text-navy">Finance Team</h3>
+                            <span class="icon text-navy">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 space-y-4">
+                                <div><p class="font-semibold text-gray-700">Full visibility of all operational costs (labour, subcontractors, missed visits etc) linked to specific contracts</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes. The platform captures job-related financial data (operatives time, subcontractor costs, travel time of vehicles, cost of mileage (vehicles), which is linked to contract. The platform's structure and DAAS reporting can provide the client-level P&amp;L summary requested in the demo brief.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Customisable fields at all levels to link back to legacy systems</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, custom fields can be added to all areas of the system (clients, sites, jobs etc) to hold legacy identifiers, such as the 'Block ID' requested by the finance team, ensuring a consistent data link between systems.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Customisable dashboards for profitability and operational analysis</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the 'Data as a Service' (DAAS) offering provides direct access to your BigChange data, enabling the creation of bespoke, in-depth dashboards in tools like Power BI to track profitability and any other key metric. This was discussed during discovery. Alternatively BigChange offers out the box dashboards and reports that can be filtered on by client (but please note these are not bespoke).</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Easy data export for financial analysis</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, all data within the BigChange reporting suite can be easily exported to formats such as CSV and Excel. BigChange offers a blueprint function which allows customers to choose which fields they want to pull out into an Excel and report on them solely so not to give you every un-required field.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion: Business Support -->
+                    <div class="border rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                            <h3 class="text-xl font-bold text-navy">Business Support</h3>
+                            <span class="icon text-navy">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 space-y-4">
+                                <div><p class="font-semibold text-gray-700">Reduce email dependency with unified task tracking interface</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, BigChange centralises all task management via the BigChange notes function per office user. This creates a unified task list per user with manageable due dates and a single source of truth, drastically reducing internal email reliance as requested.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Improve internal visibility of client communications</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the CRM notes function logs all communications with a client, including system-generated alerts, messages, and notes. This provides the 360-degree communication history requested in the demo brief.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Foundation for consolidating/integrating external client portals</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes customers can either utilise the BigChange 'out-of-the-box' portal or using BigChange API's integrations are achievable with client external portals.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion: Sales Team -->
+                    <div class="border rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                            <h3 class="text-xl font-bold text-navy">Sales Team</h3>
+                            <span class="icon text-navy">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 space-y-4">
+                                <div><p class="font-semibold text-gray-700">Visibility of Data to support new business tendering process</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the BigChange Sales Opportunities function allows for opportunity management with stages, probabilities and due dates. This can be used for tendering and ensuring you can track this through to a live opportunity. </p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Easy way to set up new contracts from New Business Form</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the system makes it simple to create new clients, sites, and recurring job schedules. While full Salesforce NBF integration is part of a future phase , we can configure a streamlined process to rapidly set up new contracts from NBF data, eliminating manual duplication.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion: IT Team -->
+                    <div class="border rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                            <h3 class="text-xl font-bold text-navy">IT Team</h3>
+                            <span class="icon text-navy">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 space-y-4">
+                                <div><p class="font-semibold text-gray-700">The system should be cloud-based (SaaS) with data hosting in the UK or EU.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, BigChange is a fully-integrated, cloud-based SaaS platform. We are a UK-based company with UK-based support, and all data is hosted in Tier 3 data centres in the EU, in full compliance with data residency regulations.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Must be accessible via web browser on desktop, tablet, and mobile devices.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the back-office platform is fully web-based and accessible through any modern browser on any device.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Mobile applications must support both iOS and Android and work offline.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the BigChange mobile app is available on both iOS and Android and is designed to work offline, syncing data automatically when a connection is restored.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">The platform must support configurable role-based access controls.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, BigChange has granular, role-based security permissions ensuring that users, from operatives to senior management, can only view and access the information and functions relevant to their role.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Two-factor authentication must be available for admin and sensitive access roles.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, two-factor authentication (2FA) is a standard security feature available for all users to secure access to the platform.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">All data must be encrypted both at rest and in transit.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, BigChange adheres to the highest security standards. All data is fully encrypted at rest and in transit using industry-standard protocols.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">The system must be fully GDPR compliant, including consent management and data handling practices.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, as a UK-based company, BigChange is fully GDPR compliant and provides the tools to manage data in line with regulations.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">A full audit trail of user activity and system changes should be available.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the platform provides a time-stamped audit trail for all jobs and most changes, ensuring wide visibility and accountability.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">The system must be able to integrate or export data to existing platforms, including Templa (finance/payroll) and Salesforce.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes. We offer 'API Access' to support seamless integration. We have already delivered a proven, seamless integration with TemplaCMS for other businesses within the Churchill Group. Salesforce integration is also achievable via the API.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">APIs or alternative data transfer methods (e.g. flat files, middleware) must be supported.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, BigChange has a comprehensive set of APIs for real-time integration. The system also supports the import and export of data via flat files (e.g., CSV, Excel).</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Real-time dashboards and reporting must be available, with export options (Excel, CSV, Power BI, etc.).</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, this is a core strength. BigChange provides real-time dashboards and a full reporting suite with export options. Our 'Data as a Service' offering also allows for a direct, real-time data feed into Power BI or other BI tools.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Data must be filterable by contract, region, block, and service line.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, all data and reports within BigChange can be filtered by a wide range of standard and custom fields, including contract, region, service line, or a custom 'Block' identifier.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Training should be included for admin users and field operatives.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, your proposal includes a tailored onboarding programme and training designed specifically for Chequers, delivered by a dedicated Onboarding Manager to ensure a successful rollout.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Ongoing support must include helpdesk access, a knowledge base, and defined SLAs.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, we pride ourselves on our support. Chequers will receive 24/7 UK-based support and be assigned a lifetime Customer Success Manager to ensure long-term value, continuous improvement, and ongoing training.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">The system must be compatible with Chequers’ current device estate (smartphones, tablets, laptops).</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, the platform is device-agnostic. The back-office runs in any web browser, and the mobile app is compatible with standard iOS and Android smartphones and tablets.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">The platform must be scalable to support additional users, data, and contracts over time.</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, as a cloud-native platform, BigChange is inherently scalable. We have a proven track record of supporting the rapid growth of our clients. The commercial model allows for licences to be added or redeployed across the Churchill Group as you scale.</p></div>
+                                <div class="border-t pt-4"><p class="font-semibold text-gray-700">Flexibility and customisability of the platform is imperative to create bespoke workflows processes and data models</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> Yes, this is a core differentiator for BigChange. The platform features a 'Custom Automation Builder' , highly customisable job workflows, and flexible data models. The two years of collaborative discovery and customisation work already completed with Chequers demonstrates our commitment and ability to meet your exact needs.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion: Supporting SLA Links -->
+                    <div class="border rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                            <h3 class="text-xl font-bold text-navy">Supporting SLA Links</h3>
+                            <span class="icon text-navy">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 space-y-4">
+                                <div><p class="font-semibold text-gray-700">SLO's &amp; Case Priority Categorisations</p><p class="text-sm text-gray-600 mt-1"><strong>Response:</strong> <a href="https://support.bigchange.com/articles/hg/bigchange-support" target="_blank" class="text-energy-blue hover:underline">https://support.bigchange.com/articles/hg/bigchange-support</a></p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seamless Automated Integration Section -->
+        <section id="integration-templa" class="py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-center text-navy mb-4">Out of the Box Seamless Integration with Templa</h2>
+                    <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-12">The power of BigChange, seamlessly integrated with your financial systems, is already delivering proven results for the Churchill Group. This removes manual processes, reduces errors, and ensures real-time visibility of operational and financial performance.</p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg border-t-4 border-energy-blue">
+                    <div class="flex flex-col md:flex-row items-center justify-center text-center md:text-left">
+                        <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-12 mb-4 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=BigChange';">
+                        <div class="mx-6 text-energy-blue">
+                            <span class="icon" style="font-size: 48px;">sync_alt</span>
+                        </div>
+                        <img src="https://happsa.com.au/wp-content/uploads/2020/02/TEMPLA_LOGO_RGB-WEB.jpg" alt="Templa Logo" class="h-12 mt-4 md:mt-0" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=Templa';">
+                    </div>
+                    <div class="mt-6 text-center text-gray-700">
+                        <p>We currently deliver this seamless integration for businesses within the Churchill Group, connecting BigChange with TemplaCMS to streamline financial processes. This joined-up approach ensures accurate, real-time data flow between operational and financial systems—enabling Churchill to work smarter, faster, and more efficiently across its divisions.</p>
+                    </div>
+                </div>
+
+                <div class="max-w-4xl mx-auto mt-12 text-gray-700">
+                    <div class="flex items-start gap-6">
+                        <img src="https://i.postimg.cc/jjkfmMLX/images-removebg-preview.png" alt="Microsoft Dynamics Logo" class="h-12 mt-1" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=Dynamics';">
+                        <p>BigChange can also integrate with Microsoft Dynamics. BigChange Integration Partners ensure a seamless, tailored connection with Microsoft Dynamics 356.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unrivalled Support Section -->
+        <section id="unrivalled-support" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex justify-center items-center gap-4 mb-12">
+                    <h2 class="text-4xl font-bold text-center text-navy">Unrivalled Support. Unmatched Service.</h2>
+                    <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=BigChange';">
+                </div>
+                <p class="text-lg text-gray-600 text-center max-w-4xl mx-auto mb-12">BigChange provides round-the-clock support to ensure help is always on hand. Every customer is assigned a dedicated Onboarding Manager to guide them through implementation, followed by a Customer Success Manager post go-live to ensure long-term value and continuous improvement.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Support Card -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center">
+                        <img src="https://i.postimg.cc/CMPcgpQG/655f5ff114bac7a6c1449f8d-tab-2-guy-on-computer.jpg" alt="24-7 Customer Support" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x300/CCCCCC/FFFFFF?text=Support';">
+                        <h3 class="text-2xl font-bold text-navy mb-2">24/7 UK-Based Support</h3>
+                        <p class="text-gray-700">Our UK-based support team is available 24/7 to provide assistance whenever you need it. Whether it's a technical query or a question about a feature, we're here to help you get the most out of BigChange.</p>
+                    </div>
+                    <!-- Implementation Card -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center">
+                        <img src="https://i.postimg.cc/C5Tx2xqF/Implementation.png" alt="Dedicated Onboarding Manager" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x300/CCCCCC/FFFFFF?text=Implementation';">
+                        <h3 class="text-2xl font-bold text-navy mb-2">Dedicated Onboarding</h3>
+                        <p class="text-gray-700">A dedicated Onboarding Manager will guide you through every step of the implementation process, ensuring a smooth and successful transition to BigChange. They'll work with you to configure the system to your specific needs.</p>
+                    </div>
+                    <!-- Customer Success Card -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center">
+                        <img src="https://i.postimg.cc/vB9Q5wSC/Customer-Success.jpg" alt="Customer Success Manager" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x300/CCCCCC/FFFFFF?text=Customer+Success';">
+                        <h3 class="text-2xl font-bold text-navy mb-2">Lifetime Customer Success</h3>
+                        <p class="text-gray-700">Once you're live, a Customer Success Manager will be your long-term partner, helping you to drive more value from BigChange, providing ongoing training, and identifying opportunities for continuous improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Built for Scale Section -->
+        <section id="built-for-scale" class="py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-center text-navy mb-4">Built for Scale: How We Migrate, Protect & Connect</h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-start">
+                    <!-- Data Migration -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center justify-center h-56 bg-gray-100 rounded-md mb-6 p-4">
+                            <img src="https://i.postimg.cc/rFGdR3dD/Excel-Logo.png" alt="Excel Logo" class="h-24" onerror="this.onerror=null;this.src='https://placehold.co/100x100/CCCCCC/FFFFFF?text=Excel';">
+                            <span class="icon text-energy-blue mx-4" style="font-size: 48px;">arrow_forward</span>
+                            <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-16" onerror="this.onerror=null;this.src='https://placehold.co/150x64/000000/FFFFFF?text=BigChange';">
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy mb-4">Data Migration</h3>
+                        <p class="text-gray-700">At BigChange, we understand that migrating your existing data into a new system can be daunting, which is why we’ve built a streamlined and proven approach to ensure a smooth transition. Customer data—such as customers, sites, contacts, operatives, skills, jobs, and other operational records—can be imported efficiently into BigChange using pre-defined Excel templates.</p>
+                        <p class="text-gray-700 mt-4">These templates are designed to capture the structure and format needed for successful imports and are supported by our experienced onboarding team, who provide hands-on guidance and validation throughout the process. Whether you're consolidating systems or starting from spreadsheets, our structured approach ensures minimal disruption and maximum data integrity during go-live.</p>
+                    </div>
+                    <!-- Security -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img src="https://i.postimg.cc/ZRpx2jqX/ISOAccreds.jpg" alt="Security Accreditations" class="w-full h-56 object-contain rounded-md mb-6" onerror="this.onerror=null;this.src='https://placehold.co/600x300/CCCCCC/FFFFFF?text=Security';">
+                        <h3 class="text-2xl font-bold text-navy mb-4">Security</h3>
+                        <p class="text-gray-700">BigChange treats the confidentiality, integrity, and availability of your data as paramount. Our Information Security Management System (ISMS) is certified to ISO 27001, and we align with additional standards such as ISO 22301 for Business Continuity and ISO/IEC 27701 for Privacy Information Management.</p>
+                        <div class="mt-6">
+                            <h4 class="text-xl font-bold text-navy mb-3">Key highlights of our security posture include:</h4>
+                            <ul class="space-y-3 text-gray-700 text-sm">
+                                <li class="flex items-start"><span class="icon text-energy-blue mr-2">cloud</span><div><strong>Cloud Infrastructure:</strong> We host on <img src="https://i.postimg.cc/zGhvnQPm/Amazon-Web-Services-Logo.png" alt="AWS Logo" class="inline-block h-4 ml-1" onerror="this.onerror=null;this.src='https://placehold.co/50x20/CCCCCC/FFFFFF?text=AWS';">, leveraging its globally secure and resilient infrastructure, including multi-region data storage and encryption at rest and in transit.</div></li>
+                                <li class="flex items-start"><span class="icon text-energy-blue mr-2">lock</span><div><strong>Access Control:</strong> We implement multi-factor authentication, IP restrictions, and role-based access permissions.</div></li>
+                                <li class="flex items-start"><span class="icon text-energy-blue mr-2">phonelink_lock</span><div><strong>App Security:</strong> Our mobile apps follow a secure development lifecycle, are tested annually by external penetration testers, and include MDM (Mobile Device Management) enforcement with remote wipe capabilities.</div></li>
+                                <li class="flex items-start"><span class="icon text-energy-blue mr-2">shield</span><div><strong>Continuous Protection:</strong> We conduct regular vulnerability scanning, third-party pen testing, and maintain a comprehensive backup regime across multiple geographies.</div></li>
+                                <li class="flex items-start"><span class="icon text-energy-blue mr-2">admin_panel_settings</span><div><strong>Personnel & Processes:</strong> All BigChange employees are thoroughly vetted and trained in security best practices, with a designated Data Protection Officer ensuring compliance with UK GDPR standards.</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Integration -->
+                <div class="bg-white p-8 rounded-lg shadow-lg mt-12">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                        <div class="md:col-span-1 text-center">
+                               <span class="icon text-energy-blue" style="font-size: 120px;">hub</span>
+                        </div>
+                        <div class="md:col-span-2">
+                               <h3 class="text-2xl font-bold text-navy mb-4">Integration</h3>
+                            <p class="text-gray-700">BigChange is built to work seamlessly within your existing digital ecosystem. We provide a robust and well-documented REST API and a suite of Web Services, enabling integrations with leading third-party platforms including CRM, ERP, finance systems, customer portals, IoT devices, and more.</p>
+                            <p class="text-gray-700 mt-4">Customers can either:</p>
+                               <ul class="list-disc list-inside space-y-2 text-gray-700 mt-2">
+                                <li>Build their own integrations using our developer-friendly APIs,</li>
+                                <li>Or work with one of our certified integration partners, who have experience in creating bespoke integrations that maximise the value of BigChange in complex or enterprise environments.</li>
+                            </ul>
+                            <p class="text-gray-700 mt-4">From synchronising job data with ERP systems to automating workflows across platforms, BigChange ensures your technology stack works as a unified whole.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Overview Section -->
+        <section id="pricing-overview" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex justify-center items-center gap-4 mb-4">
+                    <h2 class="text-4xl font-bold text-center text-navy">BigChange Pricing Overview</h2>
+                    <img src="https://i.postimg.cc/9QYhwmgK/Big-Change-Logo1.png" alt="BigChange Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/150x48/000000/FFFFFF?text=BigChange';">
+                </div>
+                <p class="text-center text-sm text-gray-600 max-w-4xl mx-auto mb-12">Previously, we’d offered a signing-on bonus to support the ramp-up, and we’re still happy to revisit commercials and assist with migration should we be successful in the RFI process.</p>
+                
+                <!-- Licensing Fees -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-navy mb-8 text-center">Licensing Fees</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Mobile Team Licences -->
+                        <div class="border border-gray-200 rounded-lg p-6 text-center flex flex-col">
+                            <h4 class="text-xl font-bold text-energy-blue">Mobile Team Licences</h4>
+                            <p class="text-4xl font-extrabold my-4 text-navy">£59.95<span class="text-lg font-medium text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-500">Standard Rate: £79.95</p>
+                            <p class="font-semibold mt-2 text-navy">90 Licences</p>
+                            <p class="text-gray-600 mt-4 flex-grow text-sm">For mobile teams using the BigChange app in the field. Includes full system functionality, job completion, timesheets, custom worksheets, time logging, and live GPS tracking.</p>
+                        </div>
+                        <!-- Static Worker Licences -->
+                        <div class="border-2 border-energy-blue rounded-lg p-6 bg-blue-50 text-center flex flex-col relative">
+                            <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 inline-block bg-energy-blue text-white text-xs font-bold px-3 py-1 rounded-full">EXCLUSIVE</span>
+                            <h4 class="text-xl font-bold text-energy-blue mt-4">Static Worker Licences</h4>
+                            <p class="text-4xl font-extrabold my-4 text-navy">£18<span class="text-lg font-medium text-gray-500">/month</span></p>
+                            <p class="font-semibold mt-2 text-navy">35 Licences</p>
+                            <p class="text-gray-600 mt-4 flex-grow text-sm">Custom-created for static cleaning staff. Includes mobile app access for time logging and job completion. Live tracking is excluded. A significant commercial concession to ensure full workforce visibility.</p>
+                        </div>
+                        <!-- Back Office Licences -->
+                        <div class="border border-gray-200 rounded-lg p-6 text-center flex flex-col">
+                            <h4 class="text-xl font-bold text-energy-blue">Back Office Licences</h4>
+                            <p class="text-4xl font-extrabold my-4 text-navy">£59.95<span class="text-lg font-medium text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-500">Standard Rate: £79.95</p>
+                            <p class="font-semibold mt-2 text-navy">37 Licences</p>
+                            <p class="text-gray-600 mt-4 flex-grow text-sm">For scheduling and management teams with full access to the back-office platform for complete operational oversight, resource allocation, and customer management.</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-navy text-white p-6 rounded-lg text-center">
+                        <h4 class="text-2xl font-bold">Licence Summary</h4>
+                        <div class="flex justify-center items-center space-x-8 mt-4">
+                            <div>
+                                <p class="text-4xl font-extrabold">162</p>
+                                <p class="text-gray-300">Total Licences</p>
+                            </div>
+                            <div>
+                                <p class="text-4xl font-extrabold">£8,243.65</p>
+                                <p class="text-gray-300">Total Per Month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Onboarding, Integration & Reporting -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-navy mb-8 text-center">Onboarding, Integration & Reporting</h3>
+                       <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold text-navy mb-2">Onboarding & Support</h4>
+                            <p class="text-3xl font-bold text-energy-blue mb-2">£523.50<span class="text-base font-medium text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-600">Covers the tailored onboarding programme, training, go-live support, and ongoing success management.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold text-navy mb-2">API Access</h4>
+                            <p class="text-3xl font-bold text-energy-blue mb-2">£175<span class="text-base font-medium text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-600">Enables secure integration with third-party systems like Templa for seamless data flow.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold text-navy mb-2">Data as a Service</h4>
+                            <p class="text-3xl font-bold text-energy-blue mb-2">15%<span class="text-base font-medium text-gray-500"> of Monthly Cost</span></p>
+                            <p class="text-sm text-gray-600">Access to your data for custom, in-depth reporting and dashboards in tools like Power BI.</p>
+                        </div>
+                    </div>
+                         <p class="text-center text-xs text-gray-500 mt-4">N.B. There are no recurring maintenance costs associated with the software. This is all taken into account in the recurring fees.</p>
+                </div>
+
+                <!-- Optional Items -->
+                <div>
+                    <h3 class="text-3xl font-bold text-navy mb-8 text-center">Optional Items (Out of Scope)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-lg"><h5 class="font-bold text-navy">Vehicle Tracking</h5><p class="text-sm text-gray-600">Hard-wired or OBD Port trackers available at no additional cost.</p></div>
+                        <div class="bg-gray-50 p-4 rounded-lg"><h5 class="font-bold text-navy">Tablet/Mobile Bundle</h5><p class="text-sm text-gray-600">Add a device for +£20/month. Add unlimited calls & data for +£45/month.</p></div>
+                        <div class="bg-gray-50 p-4 rounded-lg"><h5 class="font-bold text-navy">Dashcams</h5><p class="text-sm text-gray-600">Front and driver-facing dashcams available for £24.95/month.</p></div>
+                        <div class="bg-gray-50 p-4 rounded-lg"><h5 class="font-bold text-navy">Text Charges</h5><p class="text-sm text-gray-600">Automated customer ETA texts are charged at 5p per text.</p></div>
+                        <div class="bg-gray-50 p-4 rounded-lg"><h5 class="font-bold text-navy">Professional Services</h5><p class="text-sm text-gray-600">Specialist projects (e.g., complex integrations) are quoted separately.</p></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Case Studies Section -->
+        <section id="case-studies" class="py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-4xl font-bold text-center text-navy mb-12">Delivering Impact: BigChange Case Studies</h2>
+                <div class="space-y-16">
+                    <!-- Pinnacle Group Case Study -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-2">
+                            <div class="p-8 flex flex-col justify-center">
+                                <img src="https://i.postimg.cc/P5VK02W5/Pinnacle-Logo.png" alt="Pinnacle Group Logo" class="h-12 mb-6 self-start" onerror="this.onerror=null;this.src='https://placehold.co/150x48/CCCCCC/FFFFFF?text=Pinnacle+Logo';">
+                                <p class="text-gray-600 text-sm mb-6 flex-grow">"Pinnacle Group has transformed its customer experience and increased operational efficiency... Using BigChange, Pinnacle has achieved a significant improvement in transparency and communication with clients by delivering live operational information and has overcome challenges resulting from the pandemic which saw a reduced workforce facing an increased workload."</p>
+                                <a href="https://www.bigchange.com/success-stories/bigchange-facilitates-business-transformation-for-pinnacle-group" target="_blank" class="mt-auto inline-block bg-energy-blue text-white font-bold py-2 px-4 rounded-lg hover:bg-navy transition duration-300 text-center w-full sm:w-auto">Read More</a>
+                            </div>
+                               <img src="https://i.postimg.cc/G2wP1NHd/67d92cfb5bca5da2c275c1f4-Pinnacle-Group.jpg" alt="Pinnacle Group" class="w-full h-64 md:h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Pinnacle+Group';">
+                        </div>
+                    </div>
+                    <!-- Thirteen Housing Group Case Study -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                           <div class="grid grid-cols-1 md:grid-cols-2">
+                            <img src="https://i.postimg.cc/DzKQ9HWF/Thirteen-Image1.png" alt="Thirteen Housing Group" class="w-full h-64 md:h-full object-cover md:order-last" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Thirteen+Group';">
+                            <div class="p-8 flex flex-col justify-center">
+                                <img src="https://i.postimg.cc/Hx1ycy0g/eb73fbc6-4a52-ed11-9562-0022481b5c3d.jpg" alt="Thirteen Housing Group Logo" class="h-12 mb-6 self-start" onerror="this.onerror=null;this.src='https://placehold.co/150x48/CCCCCC/FFFFFF?text=Thirteen+Logo';">
+                                <p class="text-gray-600 text-sm mb-6 flex-grow">"Thirteen Group has implemented new mobile workforce management software from BigChange. The system, which incorporates CRM, job scheduling, a customer portal, vehicle tracking and a mobile app, is intended to improve services, reduce costs and boost productivity."</p>
+                                <a href="https://www.bigchange.com/success-stories/thirteen-boosts-fm-services-with-bigchange-mobile-tech" target="_blank" class="mt-auto inline-block bg-energy-blue text-white font-bold py-2 px-4 rounded-lg hover:bg-navy transition duration-300 text-center w-full sm:w-auto">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white">
+        <div class="container mx-auto px-4 md:px-8 py-8 text-center">
+            <img src="https://i.postimg.cc/ydbgqXFm/Big-Change-White.png" alt="BigChange Logo" class="h-10 mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/200x50/0A2240/FFFFFF?text=BigChange';">
+            <h2 class="text-3xl font-bold">Ready for your BigChange?</h2>
+            <p class="text-gray-300 mt-2">Let's make your business unstoppable.</p>
+            <p class="text-xs text-gray-400 mt-4">This landing page has been built specifically for Chequers Contract Services RFI Response.</p>
+            <p class="text-sm text-gray-500 mt-8">&copy; 2025 BigChange. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sticky Nav functionality
+            const nav = document.getElementById('sticky-nav');
+            const headerHeight = document.querySelector('header').offsetHeight;
+            window.onscroll = function() {
+                if (window.pageYOffset > headerHeight) {
+                    nav.style.top = "0";
+                } else {
+                    nav.style.top = "-100px";
+                }
+            };
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu on link click
+            const mobileLinks = document.querySelectorAll('#mobile-menu a, #sticky-nav a[href^="#"]');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(!mobileMenu.classList.contains('hidden')){
+                         mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Gantt Chart Interactivity
+            const ganttBars = document.querySelectorAll('.gantt-bar');
+            const ganttTitle = document.getElementById('gantt-title');
+            const ganttTimeline = document.getElementById('gantt-timeline');
+            const ganttDescription = document.getElementById('gantt-description');
+
+            function updateDetails(bar) {
+                if (!bar || !ganttTitle || !ganttTimeline || !ganttDescription) return;
+                
+                ganttTitle.textContent = bar.dataset.title;
+                ganttTimeline.textContent = bar.dataset.timeline;
+                ganttDescription.textContent = bar.dataset.description;
+
+                ganttBars.forEach(b => b.classList.remove('active'));
+                bar.classList.add('active');
+            }
+
+            ganttBars.forEach(bar => {
+                bar.addEventListener('click', () => {
+                    updateDetails(bar);
+                });
+            });
+
+            if (ganttBars.length > 0) {
+                updateDetails(document.querySelector('.gantt-bar.active') || ganttBars[0]);
+            }
+            
+            // Accordion functionality
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    button.classList.toggle('open');
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
